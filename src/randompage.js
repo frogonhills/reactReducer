@@ -12,14 +12,29 @@ export default function House(){
 
 
 
+    const mystyle = {
+        color: "white",
+        backgroundColor: "DodgerBlue",
+        padding: "10px",
+        fontFamily: "Arial"
+      };
+
+
+
+
+
+
 
 
     return(
         <span>
-            <h1>thi is form another  page 1 : {input}</h1>
-            <br />
-            
-            <button onClick={()=> dispatch(login())}    >from House LOGIN</button>
+            <div style={mystyle} >
+                <h1>This is page 1 </h1>
+                <h2> Input from page 2 is : {input} </h2>
+                <br />
+                
+                <button onClick={()=> dispatch(login())}    > LOGIN form page 1</button>
+            </div>
         </span>
     )
 }

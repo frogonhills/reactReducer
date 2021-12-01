@@ -5,7 +5,7 @@
 import React from 'react'
 import {  useDispatch } from 'react-redux'
 import { useState } from 'react';
-import {input , reset} from './actions';
+import {input , reset ,logOut} from './actions';
 
 
 
@@ -25,28 +25,49 @@ const InputForm = () => {
 
 
 
+    const mystyle = {
+        color: "white",
+        backgroundColor: "orange",
+        
+        padding: "10px",
+        fontFamily: "Arial"
+      };
+
+
+
     
 
 
     return (
-        <div>
-            <form>
-                <label>
+        <div style={mystyle} >
+            <h1> This is page 2 </h1>
 
-                    input & reset form page 2 : 
+            <div>
+                <form>
+                    <label>
+
+                        input & reset form page 2 : 
+                        
+                        <input type="text" name="name" onChange={event => setData(event.target.value)} />
+                    </label>
+                    <button onClick={onSubmit} >INPUT</button>
                     
-                    <input type="text" name="name" onChange={event => setData(event.target.value)} />
-                </label>
-                <button onClick={onSubmit} >kilo</button>
-                
-            </form>
+                </form>
+            </div>
 
 
             <br/>
             <br/>
             <br/>
             <br/>
-            <button onClick={()=>dispatch(reset())} >Reset form diff page</button>
+            <div>
+                 <button onClick={()=>dispatch(reset())} >Reset form page 1</button>
+            </div>
+            <br/>
+            <div>
+            <button  onClick={()=> dispatch(logOut()) }>LogOut from page 2 </button>
+            </div>
+            
             
 
 
